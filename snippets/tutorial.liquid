@@ -87,8 +87,6 @@
     <p>You are a child</p>
 {%endif%}
 
-{%endcomment%}
-
 {% assign num = 12434 %}
 {% assign mod15 = num | modulo: 15 %}
 {% assign mod3  = num | modulo: 3 %}
@@ -106,4 +104,13 @@
 {% else %}
     <p>Odd number, not divisible by 3 or 5</p>
 {% endif %}
+
+
+{%endcomment%}
+
+
+
+{% for product in collection.products %}
+    <p>{{product.title}}</p>
+{%endfor%}
 
