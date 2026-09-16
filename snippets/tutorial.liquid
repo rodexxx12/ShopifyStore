@@ -1,0 +1,109 @@
+{%comment%}
+{%- assign myString = 'Rodelyn' -%}
+{{- myString -}}<br>
+
+{%- assign myNumber = 12345 -%}
+{%- assign myFloat = 12.344 -%}
+{{- myNumber -}}
+{{- myFloat -}}
+
+<br>
+{%- assign myBoolean = true -%}
+{{- myBoolean -}}
+<br>
+{%assign myNil = null -%}
+{{- myNil -}}
+
+{% if undefinedVariable == null %}
+     <p>undefinedVariable iss equal to nil</p>
+{% endif %}
+
+<br>
+
+{{product.tags}}
+
+<br>
+
+{{product.tags[2]}}
+
+
+{% for tag in product.tags %}
+    {{tag}}
+    <br>
+{%endfor%}
+
+
+<p>{{product.price}}</p>
+
+
+{% capture var1 %}
+  <div>
+    <p style="color: red;">Hello {{ product.title }}</p>
+  </div>
+{% endcapture %}
+
+{{ var1 }}
+
+
+
+
+{%capture var1%}
+    <div>
+        <p class="p-title"> hello {{product.title}}</p>
+    </div>
+{%endcapture%}
+
+{{var1}}
+
+<style>
+    .p-title{
+        color: red;
+        font-size: 2rem;
+    }
+</style>
+
+
+
+
+{% assign num1 = 11 %}
+
+{% if num1 > 10 %}
+    <p>number is greater then 10</p>
+{% else %}
+    <p>number is not greater than 10</p>
+{%endif%}
+
+
+
+{% assign age =199 %}
+
+{% if age >= 60 %}
+    <p>You are retired</p>
+{% elsif age >= 30 %}
+    <p>You are old</p>
+{% elsif age >= 20 %}
+    <p>You are an adult</p>
+{%else%}
+    <p>You are a child</p>
+{%endif%}
+
+{%endcomment%}
+
+{% assign num = 12434 %}
+{% assign mod15 = num | modulo: 15 %}
+{% assign mod3  = num | modulo: 3 %}
+{% assign mod5  = num | modulo: 5 %}
+{% assign mod2  = num | modulo: 2 %}
+
+{% if mod15 == 0 %}
+    <p>FizzBuzz - divisible by 3 and 5</p>
+{% elsif mod3 == 0 %}
+    <p>Fizz - divisible by 3</p>
+{% elsif mod5 == 0 %}
+    <p>Buzz - divisible by 5</p>
+{% elsif mod2 == 0 %}
+    <p>Even number</p>
+{% else %}
+    <p>Odd number, not divisible by 3 or 5</p>
+{% endif %}
+
