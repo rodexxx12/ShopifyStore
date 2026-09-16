@@ -106,7 +106,7 @@
 {% endif %}
 
 
-{%endcomment%}
+
 
 
 
@@ -114,3 +114,32 @@
     <p>{{product.title}}</p>
 {%endfor%}
 
+{%for product in collection.products%}
+    <p>{{product.title}}</p>
+{%endfor%}
+
+{%for i in (1..5)%}
+    <p>hello world</p>
+{%endfor%}
+
+---pagination---
+
+{% paginate collection.products by 5 %}
+    {% for product in collection.products %}
+        <p>{{product.title}}</p>
+    {% endfor %}
+
+    {{paginate | default_pagination}}
+{% endpaginate %}
+
+
+{% assign myNumber = 12 %}
+
+{% assign num1 = myNumber | plus: 5 %}
+{% assign num2 = myNumber | minus: 5 %}
+{% assign num3 = myNumber | times: 5 %}
+{% assign num4 = myNumber | divided_by: 5 %}
+
+
+{{num1}}
+{%endcomment%}
