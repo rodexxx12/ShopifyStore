@@ -281,7 +281,10 @@
       ],
       "name": "t:names.collections_editorial",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "cozy-house-cats",
+          "fuzzy-cat"
+        ],
         "layout_type": "editorial",
         "carousel_on_mobile": false,
         "columns": 3,
